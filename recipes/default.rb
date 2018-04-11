@@ -13,10 +13,7 @@ end
 
 execute 'clone' do
       command 'sudo git clone https://github.com/spotify/docker-gc.git'
-end
-
-execute 'move' do
-       cwd "/docker-gc"
+      cwd "/docker-gc"
 end
 
 execute 'build' do
