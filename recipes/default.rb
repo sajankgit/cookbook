@@ -16,7 +16,7 @@ execute 'clone' do
 end
 
 execute 'move' do
-       command 'cd docker-gc'
+       command 'sudo cd docker-gc'
 end
 
 execute 'build' do
