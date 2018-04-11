@@ -12,7 +12,7 @@ execute 'clone' do
 end
 
 execute 'move' do
-       command 'cd docker-gc'
+       command 'cd /home/ubuntu/docker-gc'
 end
 
 execute 'build' do
