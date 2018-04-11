@@ -10,7 +10,7 @@ dpkg_package 'package' do
 end
 
 
-cron “docker-gc” do
+cron 'docker-gc' do
   minute '0'
   hour '*/1'
   command "/usr/sbin/docker-gc"
