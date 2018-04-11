@@ -4,7 +4,7 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 execute 'install' do
-     command 'apt-get install git devscripts debhelper build-essential dh-make'
+     command 'apt-get -y install git devscripts debhelper build-essential dh-make'
 end
 
 execute 'clone' do
