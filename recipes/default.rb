@@ -27,7 +27,10 @@ execute 'clone' do
       command 'sudo git clone https://github.com/spotify/docker-gc.git'
 end
 
-execute 'move' do
-    cwd '/docker-gc'
+bash 'move' do
+  cwd '/docker-gc'
+  code <<-EOH
+    sudo debuild -us -uc -b
+    EOH
 end
 
