@@ -4,8 +4,15 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
+bash 'move' do
+  code <<-EOH
+    cd /
+    EOH
+end
+
+
 dpkg_package 'package' do
-  source "/docker-gc_0.1.0_all.deb"
+  source "docker-gc_0.1.0_all.deb"
   action :install
 end
 
