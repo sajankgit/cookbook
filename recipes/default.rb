@@ -29,3 +29,4 @@ cron 'docker-gc' do
   hour '*/1'
   command '/usr/sbin/docker-gc'
   action :create
+end
