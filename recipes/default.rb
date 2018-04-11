@@ -3,20 +3,24 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
+execute 'update' do
+     command 'sudo apt-get update && apt-get upgrade'
+end
+
 execute 'install' do
-     command 'apt-get -y install git devscripts debhelper build-essential dh-make'
+     command 'sudo apt-get -y install git devscripts debhelper build-essential dh-make'
 end
 
 execute 'clone' do
-      command 'git clone https://github.com/spotify/docker-gc.git'
+      command 'sudo git clone https://github.com/spotify/docker-gc.git'
 end
 
 execute 'move' do
-       command 'cd /home/ubuntu/docker-gc'
+       command 'cd docker-gc'
 end
 
 execute 'build' do
-     command 'debuild -us -uc -b'
+     command 'sudo debuild -us -uc -b'
 end
 
 dpkg_package 'docker-gc' do
