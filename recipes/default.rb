@@ -3,7 +3,8 @@
 # Recipe:: default
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-dpkg_package "docker-gc” do
+
+dpkg_package 'package' do
   source “docker-gc_0.1.0_all.deb"
   action :install
 end
