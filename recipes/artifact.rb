@@ -4,6 +4,7 @@ end
 
 execute 'repo' do
      command  'add-apt-repository ppa:webupd8team/java'
+end
 
  execute 'update2' do
      command 'sudo apt-get update'
