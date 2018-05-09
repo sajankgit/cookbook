@@ -7,7 +7,7 @@ execute 'update' do
      command 'sudo apt-get update'
 end
 
-bash ‘install_java’ do
+bash 'install_java' do
  code <<-EOH
  add-apt-repository ppa:webupd8team/java
  apt-get update
@@ -15,7 +15,7 @@ bash ‘install_java’ do
  EOH
 end
 
-bash ‘install_nginx’ do
+bash 'install_nginx' do
  code <<-EOH
  wget -c -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
  echo "deb http://nginx.org/packages/ubuntu/ trusty nginx" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null
@@ -25,7 +25,7 @@ bash ‘install_nginx’ do
  EOH
 end
 
-bash ‘install_jfrog’ do
+bash 'install_jfrog' do
  code <<-EOH
  wget -c -O- "https://bintray.com/user/downloadSubjectPublicKey?username=jfrog" | sudo apt-key add -
  echo "deb https://jfrog.bintray.com/artifactory-pro-debs trusty main" | sudo tee -a /etc/apt/sources.list
