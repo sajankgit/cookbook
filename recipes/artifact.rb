@@ -7,22 +7,17 @@ execute 'update' do
      command 'sudo apt-get update'
 end
 
-bash 'install_nginx' do
- code <<-EOH
- wget -c -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
- echo "deb http://nginx.org/packages/ubuntu/ trusty nginx" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null
- apt-get update
- apt-get -y install nginx
- service nginx restart
- EOH
-end
-
-bash 'install_jfrog' do
- code <<-EOH
- wget -c -O- "https://bintray.com/user/downloadSubjectPublicKey?username=jfrog" | sudo apt-key add -
- echo "deb https://jfrog.bintray.com/artifactory-pro-debs trusty main" | sudo tee -a /etc/apt/sources.list
- apt-get update
- apt-get install jfrog-artifactory-pro
- EOH
-end
-
+name "java"
+description "Install Oracle Java"
+default_attributes(
+  "java" => {
+    "install_flavor" => "oracle",
+    "jdk_version" => "8",
+    "oracle" => {
+      "accept_oracle_download_terms" => true
+    }
+  }
+)
+run_list(
+  "recipe[java]"
+)
