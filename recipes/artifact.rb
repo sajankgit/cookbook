@@ -6,8 +6,6 @@
 execute 'update' do
      command 'sudo apt-get update'
 end
-
-include_recipe 'nginx::repo'
  
 package 'nginx' do
   action :install
