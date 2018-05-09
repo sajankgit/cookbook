@@ -8,6 +8,7 @@ execute 'update' do
 end
 
 bash ‘install_java’ do
+ cwd '/root'
  code <<-EOH
  add-apt-repository ppa:webupd8team/java
  apt-get update
