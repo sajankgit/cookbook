@@ -2,7 +2,7 @@ execute 'update' do
      command 'sudo apt-get update'
 end
 
-bash ‘install_java’ do
+bash ‘installjava’ do
  code <<-EOH
  add-apt-repository ppa:webupd8team/java
  apt-get update
