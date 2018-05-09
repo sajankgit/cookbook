@@ -1,9 +1,20 @@
-bash ‘install_nginx’ do
- code <<-EOH
- wget -c -O- http://nginx.org/keys/nginx_signing.key | sudo apt-key add -
- echo "deb http://nginx.org/packages/ubuntu/ trusty nginx" | sudo tee -a /etc/apt/sources.list.d/nginx.list > /dev/null
- apt-get update
- apt-get -y install nginx
- service nginx restart
- EOH
+execute 'update' do
+     command 'sudo apt-get update'
+end
+
+execute 'repo' do
+     command  'add-apt-repository ppa:webupd8team/java'
+
+ execute 'update2' do
+     command 'sudo apt-get update'
+end
+
+ 
+package 'nginx' do
+  action :install
+end
+
+service 'nginx' do
+  supports status: true, restart: true, reload: true
+  action :enable
 end
