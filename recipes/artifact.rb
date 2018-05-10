@@ -24,3 +24,7 @@ bash 'install_jfrog' do
  EOH
 end
 
+execute 'install_lvm' do
+     command 'sudo apt-get install lvm2'
+end
+
