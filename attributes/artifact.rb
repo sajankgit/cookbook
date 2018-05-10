@@ -1,5 +1,5 @@
 {
-  "name": "java",
+  "name": "java"
   "description": "Oracle java role",
   "override_attributes": {
     "java": {
@@ -9,7 +9,7 @@
         "accept_oracle_download_terms": true
       }
     }
-  },
+  }
   "run_list": [
     "recipe[artifact]"
   ]
