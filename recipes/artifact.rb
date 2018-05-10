@@ -21,6 +21,7 @@ bash 'install_jfrog' do
  echo "deb https://jfrog.bintray.com/artifactory-pro-debs trusty main" | sudo tee -a /etc/apt/sources.list
  apt-get update
  apt-get install jfrog-artifactory-pro
+ service artifactory start
  EOH
 end
 
