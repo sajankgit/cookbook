@@ -9,8 +9,5 @@
         "accept_oracle_download_terms": true
       }
     }
-  },
-  "run_list": [
-    "recipe[artifact]"
-    ]
+  }
 }
