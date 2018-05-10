@@ -1,6 +1,16 @@
-default['java']['jdk_version'] = '8'
-default['java']['remove_deprecated_packages'] = true
-default['java']['oracle']['accept_oracle_download_terms'] = true
-# default['java']['java_home'] = '/usr/lib/java/default'
-default['java']['set_default'] = true
-default['java_ark']['connect_timeout'] = 1200
+{
+  "name": "java",
+  "description": "Oracle java role",
+  "override_attributes": {
+    "java": {
+      "jdk_version": 8,
+      "install_flavor": "oracle",
+      "oracle": {
+        "accept_oracle_download_terms": true
+      }
+    }
+  },
+  "run_list": [
+    "recipe[artifact]"
+    ]
+}
