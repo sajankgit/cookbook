@@ -1,5 +1,4 @@
 name "java"
-description "Install Oracle Java"
 default_attributes(
   "java" => {
     "install_flavor" => "oracle",
